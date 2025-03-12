@@ -21,7 +21,7 @@ public class TextReader {
 				
 				studentInfo.add(line.split(" "));
 			}
-	
+	//e
 		}
 		catch(IOException e)
 		{
