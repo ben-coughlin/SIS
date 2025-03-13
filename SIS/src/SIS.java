@@ -7,7 +7,7 @@ public class SIS
 
 				System.out.println("commit new");
 				System.out.println("Yesterday was Monday");
-				System.out.println("McGuire test"");
+				System.out.println("McGuire test");
 
 
 			}
