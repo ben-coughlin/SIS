@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class SIS
 	{
@@ -8,8 +9,8 @@ public class SIS
 				System.out.println("commit new");
 				System.out.println("Yesterday was Monday");
 				System.out.println("McGuire test");
-
-
+				
+				
 			}
 
 	}
