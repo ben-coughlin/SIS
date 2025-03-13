@@ -6,12 +6,11 @@ import java.util.ArrayList;
 
 public class TextReader {
 	
-	private static ArrayList<String[]> studentInfo = new ArrayList<String[]>();
+	private static ArrayList<Student> studentInfo = new ArrayList<Student>();
 	
 	public static void runFileReader()
 	{
-		/// TODO: temporary String arraylist until we get an object
-		
+	
 		try
 		{
 			BufferedReader br = new BufferedReader(new FileReader(new File("StudentInfo.txt")));
@@ -19,19 +18,19 @@ public class TextReader {
 			
 			while(line != null)
 			{
-				
-				studentInfo.add(line.split(" "));
+				String[] tempStudent = line.split(" ");
+				studentInfo.add(new Student(tempStudent[0], tempStudent[1], tempStudent[2], tempStudent[3], tempStudent[4], tempStudent[5], tempStudent[6], tempStudent[7]));
 			}
 	
 		}
 		catch(IOException e)
 		{
 			System.out.println("Whoops, an error occured reading the file.");
-			//syso
+			
 		}
 	}
 	
-	public static ArrayList<String[]> getInfo()
+	public static ArrayList<Student> getInfo()
 	{
 		return studentInfo;
 	}
