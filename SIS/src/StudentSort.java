@@ -4,11 +4,11 @@ import java.util.Scanner;
 
 public class StudentSort {
 	
-	public static Scanner scn = new Scanner(System.in);
+	
 
 	public static void sortSubmenu()
 	{
-		
+		 Scanner scn = new Scanner(System.in);
 		System.out.println("\nHow would you like to sort?");
 		System.out.println("1.) Last Name");
 		System.out.println("2.) GPA");
@@ -40,6 +40,7 @@ public class StudentSort {
 	
 	public static void sortLastName()
 	{
+		 Scanner scn = new Scanner(System.in);
 		System.out.println("You are sorting by Last Name.");
 		
 		
