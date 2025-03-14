@@ -6,8 +6,6 @@ public class MenuScreen
 		public static void menuRunning()
 		{
 			
-			
-			TextReader.runFileReader();
 			System.out.println();
 			System.out.println("What would you like to do?");
 			System.out.println("1. Add or delete a student");
