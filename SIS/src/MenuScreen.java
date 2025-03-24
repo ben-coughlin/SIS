@@ -32,8 +32,10 @@ public class MenuScreen
 			else if(answer == 3)
 				{
 					//This will take the user to the class that sorts the students
+
 					SortStudentsSubmenu.sortStudents(); 
 					
+
 				}
 		
 			else

@@ -1,10 +1,12 @@
 import java.util.Comparator;
 
-public class LastNameComparator implements Comparator<Student> {
+public class LastNameComparator implements Comparator<Student>{
 
-	public int compare(Student s1, Student s2)
-	{
-		return s1.getLastName().compareTo(s2.getLastName());
+	@Override
+	public int compare(Student o1, Student o2) {
+		
+		return o1.getLastName().compareToIgnoreCase(o2.getLastName());
 	}
-	
+
+
 }

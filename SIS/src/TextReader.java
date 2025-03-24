@@ -18,11 +18,13 @@ public class TextReader {
 			
 			while(line != null)
 			{
+				//System.out.println(line);
 				String[] tempStudent = line.split(" ");
 				studentInfo.add(new Student(tempStudent[0], tempStudent[1], tempStudent[2], tempStudent[3], tempStudent[4], tempStudent[5], tempStudent[6], tempStudent[7]));
-				
+
 				line = br.readLine();
 			}
+			
 	
 		}
 		catch(IOException e)
@@ -30,10 +32,17 @@ public class TextReader {
 			System.out.println("Whoops, an error occured reading the file.");
 			
 		}
-	}
+		
 	
-	public static ArrayList<Student> getInfo()
-	{
+	}
+
+	public static ArrayList<Student> getStudentInfo() {
 		return studentInfo;
 	}
+
+	public static void setStudentInfo(ArrayList<Student> studentInfo) {
+		TextReader.studentInfo = studentInfo;
+	}
+	
+	
 }
