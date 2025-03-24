@@ -13,13 +13,15 @@ public class TextReader {
 	
 		try
 		{
-			BufferedReader br = new BufferedReader(new FileReader(new File("StudentInfo.txt")));
+			BufferedReader br = new BufferedReader(new FileReader(new File("StudentList.txt")));
 			String line = br.readLine();
 			
 			while(line != null)
 			{
 				String[] tempStudent = line.split(" ");
 				studentInfo.add(new Student(tempStudent[0], tempStudent[1], tempStudent[2], tempStudent[3], tempStudent[4], tempStudent[5], tempStudent[6], tempStudent[7]));
+				
+				line = br.readLine();
 			}
 	
 		}
