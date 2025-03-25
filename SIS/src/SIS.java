@@ -5,11 +5,10 @@ public class SIS
 
 		public static void main(String[] args)
 			{
-				TextReader.runFileReader();
+				TextReader.refreshStudents();
 				MenuScreen.menuRunning();
 				
 				
 			}
 
 	}
-// commte ioy598 n n
