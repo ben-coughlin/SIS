@@ -6,7 +6,7 @@ public class AddOrDeleteStudent {
     private ArrayList<Student> studentList = new ArrayList<>();
 
     public void addStudent(String firstName, String lastName, String[] classes ,String[] grades) {
-        if (grades.length < 6) {
+        if (grades.length < 3) {
             System.out.println("Error: Not enough grade information provided.");
             return;
         }
