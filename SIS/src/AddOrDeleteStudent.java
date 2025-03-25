@@ -3,27 +3,29 @@ import java.util.List;
 
 public class AddOrDeleteStudent {
 
-    private List<Student> studentList = new ArrayList<>();
+    private ArrayList<Student> studentList = new ArrayList<>();
 
-    public void addStudent(String firstName, String lastName, String[] grades) {
-      
-    
-        Student newStudent = new Student(firstName, lastName, grades[0], grades[1], grades[2], lastName, lastName, lastName);
-        
+    public void addStudent(String firstName, String lastName, String[] classes ,String[] grades) {
+        if (grades.length < 6) {
+            System.out.println("Error: Not enough grade information provided.");
+            return;
+        }
 
+        Student newStudent = new Student(firstName, lastName, classes[0], classes[1], classes[2], grades[0], grades[1], grades[2]);
         studentList.add(newStudent);
         System.out.println("Student " + firstName + " " + lastName + " has been added.");
     }
 
-
     public void deleteStudent(String firstName, String lastName) {
-        for (Student student : studentList) {
+        for (int i = 0; i < studentList.size(); i++) {
+            Student student = studentList.get(i);
             if (student.getFirstName().equals(firstName) && student.getLastName().equals(lastName)) {
-                studentList.remove(student);
+                studentList.remove(i);
                 System.out.println("Student " + firstName + " " + lastName + " has been deleted.");
-        
+                return;
             }
         }
-     
+        System.out.println("Error: Student " + firstName + " " + lastName + " not found.");
     }
 }
+
