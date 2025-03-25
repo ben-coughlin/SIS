@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class TextReader {
 	
+	
+	
 	private static ArrayList<Student> studentInfo = new ArrayList<Student>();
 	
 	public static void runFileReader()
@@ -27,7 +29,7 @@ public class TextReader {
 				index++;
 				line = br.readLine();
 			}
-			
+				
 	
 		}
 		catch(IOException e)
@@ -36,8 +38,6 @@ public class TextReader {
 			
 		}
 		
-		
-	
 	}
 
 	public static ArrayList<Student> getStudentInfo() {
@@ -47,6 +47,15 @@ public class TextReader {
 	public static void setStudentInfo(ArrayList<Student> studentInfo) {
 		TextReader.studentInfo = studentInfo;
 	}
+	
+	public static void refreshStudents()
+	{
+		setStudentInfo(new ArrayList<Student>());
+		
+		runFileReader();
+	}
+	
+	
 	
 	
 }
