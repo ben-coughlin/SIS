@@ -23,7 +23,7 @@ public class SortStudentsSubmenu {
 		}
 		else if(choice == 2)
 		{
-			//gpa
+			GPASorter.runGPASort();
 		}
 		else if(choice == 3)
 		{

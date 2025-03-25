@@ -6,7 +6,7 @@ public class LastNameSorter {
 	public static void runLastNameSort()
 	{
 		int studentNum = 1;
-		ArrayList<Student> lastNameSorted = TextReader.getInfo();
+		ArrayList<Student> lastNameSorted = TextReader.getStudentInfo();
 		
 		Collections.sort(lastNameSorted, new LastNameComparator());
 		
