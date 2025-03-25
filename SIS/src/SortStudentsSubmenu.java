@@ -28,7 +28,7 @@ public class SortStudentsSubmenu {
 			}
 			else if(choice == 3)
 			{
-				//period
+				PeriodSorter.runPeriodSort();
 			}
 			else if(choice == 4)
 			{
