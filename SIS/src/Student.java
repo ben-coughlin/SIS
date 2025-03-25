@@ -9,6 +9,7 @@ public class Student {
 	private String periodThree;
 	private String p3Grade;
 	
+	
 
 
 	public Student(String firstName, String lastName, String periodOne, String p1Grade, String periodTwo, String p2Grade, String periodThree, String p3Grade) {
@@ -20,7 +21,13 @@ public class Student {
 		this.p2Grade = p2Grade;
 		this.periodThree = periodThree;
 		this.p3Grade = p3Grade;
+		
 	}
+
+
+
+
+	
 
 
 	public String getFirstName() {

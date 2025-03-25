@@ -35,12 +35,36 @@ public class ChangeStudentsNameOrSchedule
 		
 		public static void GradeIsChanging()
 		{
+			System.out.println();
+			System.out.println("You have chosen to switch a students grade.");
+			System.out.println("What student do you want to work with?");
+			
+			Scanner userInput = new Scanner (System.in);
+			int studentChosen = userInput.nextInt();
 			
 		}
 		
 		public static void ClassIsChanging()
 		{
+			System.out.println();
+			System.out.println("You have chosen to switch a student's class.");
+			System.out.println("What student do you want to work with?");
+			
+			Scanner userInput = new Scanner (System.in);
+			int studentChosen = userInput.nextInt();
+			
+		}
+		
+		public static void StudentIsPicked()
+		{
 			
 		}
 		
 	}
+
+
+
+
+
+
+
