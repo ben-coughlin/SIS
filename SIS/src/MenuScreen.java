@@ -15,6 +15,8 @@ public class MenuScreen
 		
 			Scanner userInput = new Scanner (System.in);
 			int answer = userInput.nextInt();
+			
+			TextReader.refreshStudents();
 		
 			if(answer == 1)
 				{

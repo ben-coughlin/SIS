@@ -8,10 +8,12 @@ public class Student {
 	private String p2Grade;
 	private String periodThree;
 	private String p3Grade;
+	private int index;
+	
 	
 
 
-	public Student(String firstName, String lastName, String periodOne, String p1Grade, String periodTwo, String p2Grade, String periodThree, String p3Grade) {
+	public Student(String firstName, String lastName, String periodOne, String p1Grade, String periodTwo, String p2Grade, String periodThree, String p3Grade, int index) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.periodOne = periodOne;
@@ -20,7 +22,14 @@ public class Student {
 		this.p2Grade = p2Grade;
 		this.periodThree = periodThree;
 		this.p3Grade = p3Grade;
+		this.index = index;
+		
 	}
+
+
+
+
+	
 
 
 	public String getFirstName() {
@@ -62,6 +71,15 @@ public class Student {
 		this.p1Grade = p1grade;
 	}
 
+
+	public int getIndex() {
+		return index;
+	}
+
+
+	public void setIndex(int index) {
+		this.index = index;
+	}
 
 	public String getPeriodTwo() {
 		return periodTwo;
