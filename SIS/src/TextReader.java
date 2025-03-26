@@ -31,7 +31,7 @@ public class TextReader {
 			}
 				
 	
-		}
+		} 
 		catch(IOException e)
 		{
 			System.out.println("Whoops, an error occured reading the file.");
@@ -44,8 +44,8 @@ public class TextReader {
 		return studentInfo;
 	}
 
-	public static void setStudentInfo(ArrayList<Student> studentInfo) {
-		TextReader.studentInfo = studentInfo;
+	public static void setStudentInfo(ArrayList<Student> students) {
+		studentInfo = students;
 	}
 	
 	public static void refreshStudents()

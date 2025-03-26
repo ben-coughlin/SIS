@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class MenuScreen
@@ -14,36 +15,47 @@ public class MenuScreen
 			System.out.println();
 		
 			Scanner userInput = new Scanner (System.in);
-			int answer = userInput.nextInt();
 			
-			TextReader.refreshStudents();
-		
-			if(answer == 1)
-				{
-					//This will take the user to the class that adds or deletes a student
+			try
+			{
+				int answer = userInput.nextInt();
 				
-				}
-		
-			else if(answer == 2)
-				{
-					//This will take the user to the class that changes a students grades/schedule
 				
-					ChangeStudentsNameOrSchedule.StudentIsChanging();
-				}
-		
-			else if(answer == 3)
-				{
-					//This will take the user to the class that sorts the students
-
-					SortStudentsSubmenu.sortStudents(); 
+				
+				if(answer == 1)
+					{
+						//This will take the user to the class that adds or deletes a student
 					
+					}
+			
+				else if(answer == 2)
+					{
+						//This will take the user to the class that changes a students grades/schedule
+					
+						ChangeStudentsNameOrSchedule.StudentIsChanging();
+					}
+			
+				else if(answer == 3)
+					{
+						//This will take the user to the class that sorts the students
 
-				}
-		
-			else
-				{
-					System.out.println("That is not an option");
-				}
+						SortStudentsSubmenu.sortStudents(); 
+						
+
+					}
+			
+				else
+					{
+						System.out.println("That is not an option");
+						menuRunning();
+					}
+			}
+			catch(InputMismatchException e)
+			{
+				System.out.println("That is not an option");
+				menuRunning();
+			}
+			
 
 		}
 	}
