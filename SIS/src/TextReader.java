@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -9,6 +11,7 @@ public class TextReader {
 	
 	
 	private static ArrayList<Student> studentInfo = new ArrayList<Student>();
+	private static String fileName = "StudentList.txt";
 	
 	public static void runFileReader()
 	{
@@ -17,7 +20,7 @@ public class TextReader {
 	
 		try
 		{
-			BufferedReader br = new BufferedReader(new FileReader(new File("StudentList.txt")));
+			BufferedReader br = new BufferedReader(new FileReader(new File(fileName)));
 			String line = br.readLine();
 			
 			while(line != null)
@@ -38,6 +41,32 @@ public class TextReader {
 			
 		}
 		
+	}
+	public static void writeStudentList()
+	{
+		
+		
+		try
+		{
+		    FileWriter fileWriter = new FileWriter(fileName, false);
+            BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+			
+			for(int i = 0; i < studentInfo.size(); i++)
+			{
+				//System.out.println(s.getFirstName() + " " + s.getLastName() + " " + s.getPeriodOne() + " " + s.getP1grade() + " " + s.getPeriodTwo() + " " + s.getP2Grade() + " " + s.getPeriodThree() + " " + s.getP3Grade());
+
+				bufferedWriter.write(studentInfo.get(i).getFirstName() + " " + studentInfo.get(i).getLastName() + " " + studentInfo.get(i).getPeriodOne() + " " + 
+				studentInfo.get(i).getP1grade() + " " + studentInfo.get(i).getPeriodTwo() + " " + studentInfo.get(i).getP2Grade() + " " + studentInfo.get(i).getPeriodThree() 
+				+ " " + studentInfo.get(i).getP3Grade() + ((i == studentInfo.size() - 1) ? "" : "\n"));
+			}
+				bufferedWriter.close();
+	
+		} 
+		catch(IOException e)
+		{
+			System.out.println("Whoops, an error occured writing to the file.");
+			
+		}
 	}
 
 	public static ArrayList<Student> getStudentInfo() {

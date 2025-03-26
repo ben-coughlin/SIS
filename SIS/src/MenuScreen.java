@@ -12,9 +12,11 @@ public class MenuScreen
 			System.out.println("1. Add or delete a student");
 			System.out.println("2. Change student grades/schedule");
 			System.out.println("3. Sort students");
+			System.out.println("4. Save all changes to text file");
 			System.out.println();
 		
 			Scanner userInput = new Scanner (System.in);
+			
 			
 			try
 			{
@@ -25,7 +27,7 @@ public class MenuScreen
 				if(answer == 1)
 					{
 						//This will take the user to the class that adds or deletes a student
-					
+					AddOrDeleteStudent.addStudent("test", "mc test", new String[] {"Algebra", "English", "Biology"} , new String[] {"A+", "A", "B"});
 					}
 			
 				else if(answer == 2)
@@ -41,7 +43,12 @@ public class MenuScreen
 
 						SortStudentsSubmenu.sortStudents(); 
 						
-
+					}
+				else if(answer == 4)
+					{
+					
+					TextReader.writeStudentList();
+					
 					}
 			
 				else
