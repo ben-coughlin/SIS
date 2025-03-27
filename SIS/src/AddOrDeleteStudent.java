@@ -39,14 +39,14 @@ public class AddOrDeleteStudent {
     }
 
     public static void deleteStudent() {
-        Scanner scn = new Scanner(System.in);
+        Scanner userImput = new Scanner(System.in);
         ArrayList<Student> studentList = TextReader.getStudentInfo();
 
         System.out.println("Enter first name of student to delete: ");
-        String firstName = scn.next();
+        String firstName = userImput.next();
 
         System.out.println("Enter last name of student to delete: ");
-        String lastName = scn.next();
+        String lastName = userImput.next();
 
         boolean removed = studentList.removeIf(student -> 
             student.getFirstName().equalsIgnoreCase(firstName) && student.getLastName().equalsIgnoreCase(lastName));
