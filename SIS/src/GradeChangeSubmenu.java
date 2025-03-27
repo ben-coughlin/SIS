@@ -32,7 +32,7 @@ public class GradeChangeSubmenu
 					{
 						if(gradeChanged.get(i).getFirstName().equals(studentChosen))
 							{
-								System.out.println("Found!");
+								System.out.println("Found student!");
 								
 								
 							}
