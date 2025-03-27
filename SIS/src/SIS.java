@@ -5,7 +5,7 @@ public class SIS
 
 		public static void main(String[] args)
 			{
-				TextReader.refreshStudents();
+				TextReader.runFileReader();
 				MenuScreen.menuRunning();
 				
 				
