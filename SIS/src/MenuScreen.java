@@ -17,11 +17,33 @@ public class MenuScreen
 		
 			Scanner userInput = new Scanner (System.in);
 			
-			
-			try
-			{
-				int answer = userInput.nextInt();
+
+			TextReader.refreshStudents();
+		
+			if(answer == 1)
+				{
+					//This will take the user to the class that adds or deletes a student
+					
+					    System.out.println("Would you like to: ");
+					    System.out.println("1. Add a student");
+					    System.out.println("2. Delete a student");
+					    
+					    int choice = userInput.nextInt();
+					    
+					    if (choice == 1) {
+					        AddOrDeleteStudent.addStudent();
+					    } else if (choice == 2) {
+					        AddOrDeleteStudent.deleteStudent();
+					    } 
+					}
 				
+				
+				
+		
+		else if(answer == 2)
+				{
+					//This will take the user to the class that changes a students grades/schedule
+
 				
 				
 				if(answer == 1)

@@ -1,24 +1,42 @@
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class AddOrDeleteStudent {
 
-    private static ArrayList<Student> studentList = TextReader.getStudentInfo();
 
-    public static void addStudent(String firstName, String lastName, String[] classes ,String[] grades) {
-        if (grades.length < 3) {
-            System.out.println("Error: Not enough grade information provided.");
-            MenuScreen.menuRunning();
-            return;
-        }
-        else if (classes.length < 3) {
-            System.out.println("Error: Not enough class information provided.");
-            MenuScreen.menuRunning();
-            return;
-        }
+    public static void addStudent() {
+        Scanner userImput = new Scanner(System.in);
+        ArrayList<Student> studentList = TextReader.getStudentInfo();
+        
+        System.out.println("Enter first name: ");
+        String firstName = userImput.next();
+        
+        System.out.println("Enter last name: ");
+        String lastName = userImput.next();
+        
+        System.out.println("Enter Period 1 class: ");
+        String periodOne = userImput.next();
+        
+        System.out.println("Enter Period 1 grade: ");
+        String p1Grade = userImput.next();
+        
+        System.out.println("Enter Period 2 class: ");
+        String periodTwo =userImput.next();
+        
+        System.out.println("Enter Period 2 grade: ");
+        String p2Grade =userImput.next();
+        
+        System.out.println("Enter Period 3 class: ");
+        String periodThree = userImput.next();
+        
+        System.out.println("Enter Period 3 grade: ");
+        String p3Grade = userImput.next();
 
-        Student newStudent = new Student(firstName, lastName, classes[0], classes[1], classes[2], grades[0], grades[1], grades[2], 0);
+        int newIndex = studentList.size() + 1; 
+        Student newStudent = new Student(firstName, lastName, periodOne, p1Grade, periodTwo, p2Grade, periodThree, p3Grade, newIndex);
+
         studentList.add(newStudent);
+
         System.out.println("Student " + firstName + " " + lastName + " has been added.");
         
         TextReader.setStudentInfo(studentList);
@@ -26,23 +44,27 @@ public class AddOrDeleteStudent {
         return;
     }
 
-    public static void deleteStudent(String firstName, String lastName) {
-        for (int i = 0; i < studentList.size(); i++) {
-            Student student = studentList.get(i);
-            if (student.getFirstName().equals(firstName) && student.getLastName().equals(lastName)) {
-                studentList.remove(i);
-                System.out.println("Student " + firstName + " " + lastName + " has been deleted.");
-                TextReader.setStudentInfo(studentList);
-                MenuScreen.menuRunning();
-                return;
-            }
+
+    public static void deleteStudent() {
+        Scanner userImput = new Scanner(System.in);
+        ArrayList<Student> studentList = TextReader.getStudentInfo();
+
+        System.out.println("Enter first name of student to delete: ");
+        String firstName = userImput.next();
+
+        System.out.println("Enter last name of student to delete: ");
+        String lastName = userImput.next();
+
+        boolean removed = studentList.removeIf(student -> 
+            student.getFirstName().equalsIgnoreCase(firstName) && student.getLastName().equalsIgnoreCase(lastName));
+
+        if (removed) {
+            System.out.println("Student " + firstName + " " + lastName + " has been deleted.");
+        } else {
+            System.out.println("Error: Student not found.");
         }
-        
-       
-        
-        System.out.println("Error: Student " + firstName + " " + lastName + " not found.");
-        MenuScreen.menuRunning();
-        return;
+
     }
 }
+
 
